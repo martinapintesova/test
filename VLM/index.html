@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VLP</title>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+<body>
+  <div class="container fluid_block">
+<!-- logo -->
+    <div class="logo">
+      <h2>Vltava Labe Press</h2>
+    </div>
+<!-- logo end -->
+
+<!-- search field -->
+    <div class="search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="">
+
+  <ul id="myUL">
+    <li><a href="#">Ananas</a></li>
+    <li><a href="#">Automobil</a></li>
+
+    <li><a href="#">Advokacie</a></li>
+    <li><a href="#">Akademie</a></li>
+
+    <li><a href="#">Alobal</a></li>
+    <li><a href="#">Analýza</a></li>
+    <li><a href="#">Azyl</a></li>
+  </ul>
+
+    </div>
+  </div>
+<!-- search field end -->
+
+<!-- images -->
+  <div class="wrapper fluid_block">
+    <div class="box1"><img src="img/placeholder_300x300.jpeg"/></div>
+    <div class="box2"><img src="img/placeholder_300x300.jpeg"/></div>
+    <div class="box3"><img src="img/placeholder_300x300.jpeg"/></div>
+    <div class="box4"><img src="img/placeholder_300x300.jpeg"/></div>
+    <div class="box5"><img src="img/placeholder_610x300.jpeg"/></div>
+    <div class="box6"><img src="img/placeholder_300x610.jpeg"/></div>
+  </div>
+<!-- images end -->
+
+</body>
+
+<!-- function for searching -->
+<script>
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+<!-- function for searching -->
+
+</html>
